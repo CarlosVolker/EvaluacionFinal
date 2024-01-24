@@ -38,14 +38,16 @@ class AgregarMedicionActivity : AppCompatActivity(){
         val fechaMedicion = etFechaMedicion.text.toString()
 
         //Verificamos que los campos no esten vacios
-        if (tipoMedicion != null && valorMedicion.isNotBlank() && fechaMedicion.isNotEmpty()){
+        if (tipoMedicion != null && valorMedicion.isNotEmpty() && fechaMedicion.isNotEmpty()){
+            //val iconoServicio = obtenerNombreRecursoIcono(tipoMedicion)
             val aplicacion = application as Aplicacion
             val medicionDao = aplicacion.medicionDao
 
             val medicion = Medicion(
                 tipoMedicion = tipoMedicion,
                 valorMedicion = valorMedicion,
-                fechaMedicion = fechaMedicion
+                fechaMedicion = fechaMedicion,
+                //iconoMedicion = iconoServicio
             )
 
             // Insertar la medición en la base de datos
@@ -60,7 +62,6 @@ class AgregarMedicionActivity : AppCompatActivity(){
     }
 
 
-
     //Obtenemos el tipo de servicio segun la opcion que seleccionemos
     private fun obtenerTipoServicioSeleccionado(): String{
         val valorSeleccionado = radioGroupServicio?.checkedRadioButtonId
@@ -71,6 +72,4 @@ class AgregarMedicionActivity : AppCompatActivity(){
             else    -> ""
         }
     }
-
-
 }

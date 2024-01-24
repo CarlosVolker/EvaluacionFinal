@@ -8,5 +8,5 @@ class Medicion (
     @PrimaryKey(autoGenerate = true) var id:Long? = null,
     var tipoMedicion : String,
     var valorMedicion : String,
-    var fechaMedicion : String
+    var fechaMedicion : String,
 )
