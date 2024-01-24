@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tvTitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Registro Medidor"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etMedidor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:background="#ECCBCB"
+        android:backgroundTint="#D1C7C7"
+        android:drawableTint="#3C2828"
+        android:ems="10"
+        android:hint="Medidor"
+        android:inputType="text"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="@+id/tvTitulo"
+        app:layout_constraintStart_toStartOf="@+id/tvTitulo"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitulo"
+        android:autofillHints="" />
+
+    <EditText
+        android:id="@+id/etFecha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:background="#ECCBCB"
+        android:backgroundTint="#D1C7C7"
+        android:ems="10"
+        android:hint="Fecha"
+        android:inputType="date"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="@+id/etMedidor"
+        app:layout_constraintStart_toStartOf="@+id/etMedidor"
+        app:layout_constraintTop_toBottomOf="@+id/etMedidor"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/tvOpcionesServicio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:text="Medidor de:"
+        app:layout_constraintStart_toStartOf="@+id/etFecha"
+        app:layout_constraintTop_toBottomOf="@+id/etFecha" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="215dp"
+        android:layout_height="170dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="@+id/tvOpcionesServicio"
+        app:layout_constraintTop_toBottomOf="@+id/tvOpcionesServicio"
+        tools:ignore="MissingConstraints,TextSizeCheck">
+
+        <RadioButton
+            android:id="@+id/rbAgua"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:buttonTint="#6C129F"
+            android:text="Agua"
+            app:layout_constraintStart_toStartOf="@+id/tvOpcionesServicio"
+            app:layout_constraintTop_toBottomOf="@+id/tvOpcionesServicio" />
+
+        <RadioButton
+            android:id="@+id/rbLuz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+
+            android:layout_marginTop="8dp"
+            android:text="Luz"
+            app:layout_constraintStart_toStartOf="@+id/rbAgua"
+            app:layout_constraintTop_toBottomOf="@+id/rbAgua" />
+
+        <RadioButton
+            android:id="@+id/rbGas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+
+            android:layout_marginTop="8dp"
+            android:text="Gas"
+            app:layout_constraintStart_toStartOf="@+id/rbLuz"
+            app:layout_constraintTop_toBottomOf="@+id/rbLuz" />
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnAgregar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="#4F8307"
+        android:text="Registrar Medición"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup"
+        tools:ignore="HardcodedText" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
