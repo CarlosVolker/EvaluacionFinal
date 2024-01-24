@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:text="Registro Medidor"
+        android:text="@string/tvTitulo"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,7 +26,7 @@
         android:backgroundTint="#D1C7C7"
         android:drawableTint="#3C2828"
         android:ems="10"
-        android:hint="Medidor"
+        android:hint="@string/etMedidor"
         android:inputType="text"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="@+id/tvTitulo"
@@ -42,7 +42,7 @@
         android:background="#ECCBCB"
         android:backgroundTint="#D1C7C7"
         android:ems="10"
-        android:hint="Fecha"
+        android:hint="@string/etFecha"
         android:inputType="date"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="@+id/etMedidor"
@@ -55,7 +55,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="52dp"
-        android:text="Medidor de:"
+        android:text="@string/tvOpcionesServicio"
         app:layout_constraintStart_toStartOf="@+id/etFecha"
         app:layout_constraintTop_toBottomOf="@+id/etFecha" />
 
@@ -75,7 +75,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:buttonTint="#6C129F"
-            android:text="Agua"
+            android:text="@string/rbAgua"
             app:layout_constraintStart_toStartOf="@+id/tvOpcionesServicio"
             app:layout_constraintTop_toBottomOf="@+id/tvOpcionesServicio" />
 
@@ -84,9 +84,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-
             android:layout_marginTop="8dp"
-            android:text="Luz"
+            android:text="@string/rbLuz"
             app:layout_constraintStart_toStartOf="@+id/rbAgua"
             app:layout_constraintTop_toBottomOf="@+id/rbAgua" />
 
@@ -95,9 +94,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-
             android:layout_marginTop="8dp"
-            android:text="Gas"
+            android:text="@string/rbGas"
             app:layout_constraintStart_toStartOf="@+id/rbLuz"
             app:layout_constraintTop_toBottomOf="@+id/rbLuz" />
 
@@ -109,7 +107,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:backgroundTint="#4F8307"
-        android:text="Registrar Medición"
+        android:text="@string/btnAgregar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radioGroup"

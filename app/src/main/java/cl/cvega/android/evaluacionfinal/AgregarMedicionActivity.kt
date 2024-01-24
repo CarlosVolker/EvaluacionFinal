@@ -57,7 +57,7 @@ class AgregarMedicionActivity : AppCompatActivity(){
             finish()
         } else {
             // Mostrar un mensaje de error si hay campos vacíos
-            Toast.makeText(this, "Todos los campos son obligatorios", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, getString(R.string.mensaje_texto_obligatorio), Toast.LENGTH_SHORT).show()
         }
     }
 

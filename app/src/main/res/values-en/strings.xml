@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Final Evaluation</string>
+    <string name="tvTitulo">Meter Registration</string>
+    <string name="etMedidor">Measurer</string>
+    <string name="etFecha">Date</string>
+    <string name="tvOpcionesServicio">Meter of:</string>
+    <string name="rbAgua">Wather</string>
+    <string name="rbLuz">Current</string>
+    <string name="rbGas">Gas</string>
+    <string name="btnAgregar">Register</string>
+    <string name="mensaje_texto_obligatorio">All fields are required</string>
+</resources>

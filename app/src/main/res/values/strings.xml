@@ -1,3 +1,12 @@
 <resources>
-    <string name="app_name">EvaluacionFinal</string>
+    <string name="app_name">Evaluacion Final</string>
+    <string name="tvTitulo">" Registro Medidor"</string>
+    <string name="etMedidor">Medidor</string>
+    <string name="etFecha">Fecha</string>
+    <string name="tvOpcionesServicio">Medidor de:</string>
+    <string name="rbAgua">Agua</string>
+    <string name="rbLuz">Luz</string>
+    <string name="rbGas">Gas</string>
+    <string name="btnAgregar">Registrar Medición</string>
+    <string name="mensaje_texto_obligatorio">Todos los campos son obligatorios</string>
 </resources>
