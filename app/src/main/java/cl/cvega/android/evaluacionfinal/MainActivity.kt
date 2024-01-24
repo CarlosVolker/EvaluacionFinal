@@ -4,24 +4,37 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import cl.cvega.android.evaluacionfinal.ui.ListaMedicionesViewModel
+import cl.cvega.android.evaluacionfinal.ui.MedicionViewModelFactory
 import cl.cvega.android.evaluacionfinal.ui.vistarRecycler.MedicionAdapter
+import cl.cvega.android.evaluacionfinal.ui.vistarRecycler.MedicionRepository
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var recyclerView: RecyclerView
+    private lateinit var viewModel: ListaMedicionesViewModel
+    //private lateinit var recyclerView: RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val medicionDao = (applicationContext as Aplicacion).medicionDao
+        val repository = MedicionRepository(medicionDao)
+        val viewModelFactory = MedicionViewModelFactory(repository)
+        viewModel = ViewModelProvider(this, viewModelFactory).get(ListaMedicionesViewModel::class.java)
 
-        recyclerView = findViewById(R.id.listaCuentas)
+        val recyclerView = findViewById<RecyclerView>(R.id.listaCuentas)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
-        val adapter = MedicionAdapter(emptyList()) // Inicialmente, la lista está vacía
+        val adapter = MedicionAdapter(emptyList())
         recyclerView.adapter = adapter
 
+        viewModel.mediciones.observe(this) {mediciones ->
+            adapter.mediciones = mediciones
+            adapter.notifyDataSetChanged()
+        }
 
 
 

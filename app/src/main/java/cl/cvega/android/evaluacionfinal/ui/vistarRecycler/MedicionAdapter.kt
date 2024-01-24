@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import cl.cvega.android.evaluacionfinal.R
 import cl.cvega.android.evaluacionfinal.basedatos.Medicion
 
-class MedicionAdapter(private val mediciones: List<Medicion>) : RecyclerView.Adapter<MedicionViewHolder>() {
+class MedicionAdapter(var mediciones: List<Medicion>) : RecyclerView.Adapter<MedicionViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MedicionViewHolder {
