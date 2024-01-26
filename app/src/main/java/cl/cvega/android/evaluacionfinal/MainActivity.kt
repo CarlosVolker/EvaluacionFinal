@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         val medicionDao = (applicationContext as Aplicacion).medicionDao
         val repository = MedicionRepository(medicionDao)
         val viewModelFactory = MedicionViewModelFactory(repository)
-        viewModel = ViewModelProvider(this, viewModelFactory).get(ListaMedicionesViewModel::class.java)
+        viewModel = ViewModelProvider(this, viewModelFactory)[ListaMedicionesViewModel::class.java]
 
         val recyclerView = findViewById<RecyclerView>(R.id.listaCuentas)
         recyclerView.layoutManager = LinearLayoutManager(this)

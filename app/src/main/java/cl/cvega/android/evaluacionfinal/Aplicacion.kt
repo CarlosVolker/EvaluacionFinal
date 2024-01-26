@@ -6,6 +6,6 @@ import cl.cvega.android.evaluacionfinal.basedatos.BaseDatos
 
 class Aplicacion : Application() {
 
-    val db by lazy { Room.databaseBuilder(this, BaseDatos::class.java, "mediciones.db").build() }
+    private val db by lazy { Room.databaseBuilder(this, BaseDatos::class.java, "mediciones.db").build() }
     val medicionDao by lazy { db.medicionDao() }
 }
