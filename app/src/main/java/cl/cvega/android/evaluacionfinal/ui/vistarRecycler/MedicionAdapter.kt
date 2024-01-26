@@ -15,7 +15,6 @@ class MedicionAdapter(var mediciones: List<Medicion>) : RecyclerView.Adapter<Med
             .inflate(R.layout.item_lista, parent, false)
         return MedicionViewHolder(itemView)
     }
-
     override fun onBindViewHolder(holder: MedicionViewHolder, position: Int) {
         val medicion = mediciones[position]
 
@@ -26,6 +25,7 @@ class MedicionAdapter(var mediciones: List<Medicion>) : RecyclerView.Adapter<Med
         holder.bind(medicion)
     }
 
+    //metodo que define el icono a utilizar dependiendo de la seleccion que realicemos
     private fun obtenerIconoPorTipo(context: Context, tipoMedicion: String): Drawable? {
         return when (tipoMedicion) {
             "LUZ" -> ContextCompat.getDrawable(context, R.drawable.ic_luz)

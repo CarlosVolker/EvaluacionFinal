@@ -5,16 +5,17 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import cl.cvega.android.evaluacionfinal.ui.ListaMedicionesViewModel
 import cl.cvega.android.evaluacionfinal.ui.MedicionViewModelFactory
 import cl.cvega.android.evaluacionfinal.ui.vistarRecycler.MedicionAdapter
+import cl.cvega.android.evaluacionfinal.ui.vistarRecycler.MedicionDiffUtil
 import cl.cvega.android.evaluacionfinal.ui.vistarRecycler.MedicionRepository
 
 class MainActivity : AppCompatActivity() {
     private lateinit var viewModel: ListaMedicionesViewModel
-    //private lateinit var recyclerView: RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,11 +33,11 @@ class MainActivity : AppCompatActivity() {
         recyclerView.adapter = adapter
 
         viewModel.mediciones.observe(this) {mediciones ->
+            val oldList = adapter.mediciones
             adapter.mediciones = mediciones
-            adapter.notifyDataSetChanged()
+            val diffResult = DiffUtil.calculateDiff(MedicionDiffUtil(oldList, mediciones))
+            diffResult.dispatchUpdatesTo(adapter)
         }
-
-
 
         findViewById<Button>(R.id.btnIrAAgregar).setOnClickListener {
             startActivity(Intent(this, AgregarMedicionActivity::class.java))

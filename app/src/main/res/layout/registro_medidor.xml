@@ -27,7 +27,7 @@
         android:drawableTint="#3C2828"
         android:ems="10"
         android:hint="@string/etMedidor"
-        android:inputType="text"
+        android:inputType="number"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="@+id/tvTitulo"
         app:layout_constraintStart_toStartOf="@+id/tvTitulo"
