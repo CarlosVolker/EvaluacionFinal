@@ -15,7 +15,7 @@ class MedicionViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
 
     fun bind(medicion: Medicion){
         tipoMedicionTextView.text = medicion.tipoMedicion
-        valorMedicionTextView.text = medicion.valorMedicion
+        valorMedicionTextView.text = medicion.valorMedicion.toString()
         fechaMedicionTextView.text = medicion.fechaMedicion.toString()
 
     }

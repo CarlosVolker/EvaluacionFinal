@@ -40,12 +40,12 @@ class AgregarMedicionActivity : AppCompatActivity(){
     @OptIn(DelicateCoroutinesApi::class)
     private fun guardarMedicionEnBaseDeDatos() {
         val tipoMedicion = obtenerTipoServicioSeleccionado()
-        val valorMedicion = etValorMedicion.text.toString()
+        val valorMedicionString = etValorMedicion.text.toString()
         val fechaMedicion = etFechaMedicion.text.toString()
 
 
         //Verificamos que los campos no esten vacios
-        if (valorMedicion.isNotEmpty() && fechaMedicion.isNotEmpty()){
+        if (valorMedicionString.isNotEmpty() && fechaMedicion.isNotEmpty()){
 
         //fecha en un formato especifico
             val fechaLocalData: LocalDate? =
@@ -62,6 +62,7 @@ class AgregarMedicionActivity : AppCompatActivity(){
 
             val aplicacion = application as Aplicacion
             val medicionDao = aplicacion.medicionDao
+            val valorMedicion = valorMedicionString.toInt()
 
             //Creamos variable con los valores obtenidos del formulario, usando la estructura de la clase Medicion
             val medicion = Medicion(

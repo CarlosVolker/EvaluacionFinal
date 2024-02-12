@@ -5,9 +5,9 @@ import androidx.room.PrimaryKey
 import java.time.LocalDate
 
 @Entity
-class Medicion (
+class Medicion(
     @PrimaryKey(autoGenerate = true) var id:Long? = null,
-    var tipoMedicion : String,
-    var valorMedicion : String,
-    var fechaMedicion : LocalDate?
+    var tipoMedicion: String,
+    var valorMedicion: Int,
+    var fechaMedicion: LocalDate?
 )
